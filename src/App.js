@@ -14,31 +14,19 @@ function App() {
     return (
         <div >
             <div style={{ display: "flex" }}>
-                <div onClick={() => { setShowHello(true); }} style={{
-                    width: 50,
-                    height: 50,
+                <div onClick={() => { setShowHello(!showHello); }} style={{
+                    width: 128,
+                    height: 128,
                     padding: 10,
                     border: "1px solid black",
                     cursor: 'pointer',
-                    backgroundColor: "red",
+                    
 
                 }}>
-                    say hello
+                    <img src={showHello ? "https://cdn-icons-png.flaticon.com/128/2767/2767146.png":"https://cdn-icons-png.flaticon.com/128/709/709612.png"} />
                 </div>
                 
-                <div onClick={() => { setShowHello(false); }} style={{
-                    width: 50,
-                    height: 50,
-                    padding: 10,
-                    border: "1px solid black",
-                    cursor: 'pointer',
-                    backgroundColor: "orange",
-                    display: "flex"
-                }}>
-                    hide hello
-
-
-                </div>
+              
                 
             </div>
             {helloDiv}
