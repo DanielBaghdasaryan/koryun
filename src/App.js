@@ -1,40 +1,51 @@
-import { useState } from "react";
+import React, { useState } from 'react';
 
+const App = () => {
+  const [names, setNames] = useState([
+    {
+      name: "Արագածոտն",
+      clicked: false,
+    },
+    {
+      name: "Շիրակ",
+      clicked: false,
+    },
+    {
+      name: "Լոռի",
+      clicked: false
+    },
+    {
+      name: "Սյունիք",
+      clicked: false
+    },
+  ]);
 
-function App() {
-    const [showHello, setShowHello] = useState(false)
-    const x = 5;
-    let helloDiv = <div></div>
-    if (showHello) {
-        helloDiv = <div style={{ fontWeight: "bold" }}>Hello !!!</div>
-    } else {
-        helloDiv = <div></div>
-    }
+  const handleClick = (index) => {
+    const updatedNames = [...names];
+    updatedNames[index].clicked = !updatedNames[index].clicked;
+    setNames(updatedNames);
+  };
 
-    return (
-        <div >
-            <div style={{ display: "flex" }}>
-                <div onClick={() => { setShowHello(!showHello); }} style={{
-                    width: 128,
-                    height: 128,
-                    padding: 10,
-                    border: "1px solid black",
-                    cursor: 'pointer',
-                    
+  return (
+    <div style={{ display: "inline-flex", flexDirection: "column" }}>
+      {
+        names.map((mard, index) => (
+          <div
+            style={{
+              padding: "10px",
+              border: "1px solid #000",
+              backgroundColor: mard.clicked ? "#FFC0CB" : "white", // Pastel Red when clicked
+              cursor: 'pointer'
+            }}
+            key={index}
+            onClick={() => handleClick(index)}
+          >
+            {mard.name}
+          </div>
+        ))
+      }
+    </div>
+  );
+};
 
-                }}>
-                    <img src={showHello ? "https://cdn-icons-png.flaticon.com/128/2767/2767146.png":"https://cdn-icons-png.flaticon.com/128/709/709612.png"} />
-                </div>
-                
-              
-                
-            </div>
-            {helloDiv}
-
-
-        </div>
-
-    )
-}
-
-export default App
+export default App;
