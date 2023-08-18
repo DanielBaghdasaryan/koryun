@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/koryun/static/css/main.91c9544f.css",
+    "main.js": "/koryun/static/js/main.13aed100.js",
+    "index.html": "/koryun/index.html",
+    "main.91c9544f.css.map": "/koryun/static/css/main.91c9544f.css.map",
+    "main.13aed100.js.map": "/koryun/static/js/main.13aed100.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.91c9544f.css",
+    "static/js/main.13aed100.js"
+  ]
+}
